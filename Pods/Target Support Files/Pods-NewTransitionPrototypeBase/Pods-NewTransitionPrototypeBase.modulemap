@@ -1,0 +1,6 @@
+framework module Pods_NewTransitionPrototypeBase {
+  umbrella header "Pods-NewTransitionPrototypeBase-umbrella.h"
+
+  export *
+  module * { export * }
+}

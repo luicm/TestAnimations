@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Product1 View Controller-->
+        <!--Product View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Product1" id="BYZ-38-t0r" customClass="Product1ViewController" customModule="NewTransitionPrototypeBase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Product1" id="BYZ-38-t0r" customClass="ProductViewController" customModule="NewTransitionPrototypeBase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,9 +33,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZn-Xv-bP7">
                                 <rect key="frame" x="20" y="394" width="335" height="251"/>
-                                <mutableString key="text">Cupcake ipsum dolor sit amet. Candy canes donut dessert dessert chocolate cake I love gummies cookie. Gummi bears I love chupa chups toffee pie wafer bonbon dessert sweet roll. Dessert soufflé muffin I love I love sweet roll lemon drops I love I love.
+                                <string key="text">Cupcake ipsum dolor sit amet. Candy canes donut dessert dessert chocolate cake I love gummies cookie. Gummi bears I love chupa chups toffee pie wafer bonbon dessert sweet roll. Dessert soufflé muffin I love I love sweet roll lemon drops I love I love.
 Cupcake jelly beans chupa chups dragée marzipan croissant I love tart cake. Candy chocolate cake icing. I love oat cake lemon drops jelly halvah I love macaroon muffin.
-Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. Dragée tiramisu wafer dessert bonbon. Candy canes I love liquorice tart sugar plum jelly donut liquorice.</mutableString>
+Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. Dragée tiramisu wafer dessert bonbon. Candy canes I love liquorice tart sugar plum jelly donut liquorice.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.434637785" green="0.4286359549" blue="0.36021944880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -64,6 +64,10 @@ Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. 
                             <constraint firstItem="Dq6-Dz-vNW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="psL-CQ-exH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="bC3-dm-RUb" id="pXV-Bq-Hn5"/>
@@ -76,10 +80,10 @@ Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. 
             </objects>
             <point key="canvasLocation" x="3271" y="214"/>
         </scene>
-        <!--First Campaign View Controller-->
+        <!--Campaign View Controller-->
         <scene sceneID="OmF-03-fHN">
             <objects>
-                <collectionViewController storyboardIdentifier="FirstCampaign" id="mqJ-0A-iIh" customClass="FirstCampaignViewController" customModule="NewTransitionPrototypeBase" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="FirstCampaign" id="mqJ-0A-iIh" customClass="CampaignViewController" customModule="NewTransitionPrototypeBase" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rvO-uM-SNw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +125,6 @@ Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. 
                                 <connections>
                                     <outlet property="productImage" destination="cZ5-z6-QKl" id="Qd0-Q2-OjB"/>
                                     <outlet property="productNameLabel" destination="ibJ-ZM-hQL" id="rdU-AK-ScC"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="tMU-mz-Jml"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -178,6 +181,12 @@ Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. 
                             <outlet property="delegate" destination="mqJ-0A-iIh" id="GHN-ND-ugU"/>
                         </connections>
                     </collectionView>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowProductSegue" modalTransitionStyle="coverVertical" id="e8Q-Rf-xLC"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvF-ka-UeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,7 +258,6 @@ Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. 
                                     <outlet property="campaignNameLabel" destination="2Vx-mb-u7P" id="Ih1-Me-6wg"/>
                                     <outlet property="moodImage" destination="kRj-Zw-Qq7" id="C50-2q-iPz"/>
                                     <outlet property="startDateLabel" destination="W9T-pE-HkJ" id="Omr-D4-M8c"/>
-                                    <segue destination="mqJ-0A-iIh" kind="show" id="usd-4J-ROb"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -259,6 +267,12 @@ Carrot cake I love dragée cheesecake. Croissant tootsie roll dessert macaroon. 
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="6Gs-7c-Dr4"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="mqJ-0A-iIh" kind="show" identifier="ShowCampaignSegue" id="Gis-qA-Dab"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtK-Gl-9ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,8 +7,21 @@
 //
 
 import UIKit
+import Hero
 
 class CampaignViewCell: UICollectionViewCell {
+    var campaign: Campaign! {
+        didSet {
+            moodImage.image = campaign.image
+            moodImage.heroID = "image_\(campaign.id)"
+            brandNameLabel.text = campaign.brandName
+            brandNameLabel.heroID = "brand_name_\(campaign.id)"
+            campaignNameLabel.text = campaign.name
+            campaignNameLabel.heroID =  "name_\(campaign.id)"
+            startDateLabel.heroID =  "start_date_\(campaign.id)"
+        }
+    }
+    
     @IBOutlet weak var moodImage: UIImageView!
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var campaignNameLabel: UILabel!
